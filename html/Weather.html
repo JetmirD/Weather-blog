@@ -6,38 +6,225 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<style>
+    #hourlyData {
+  display: flex;
+}
+body{
+    color: white;
+    font-family: rubik;
+    background-color: #0A131F;
+
+}
+#hourlyHourDiv,
+#hourlyTempDiv {
+  flex: 1;
+}
+.search_area{
+    background-color: #202B3B;
+    border: none;
+    padding: 10px 550px 10px 10px;
+    border-radius: 8px;
+    z-index: 10;
+    color: white;
+    position: relative;
+}
+::placeholder{
+font-family: rubik;
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+}
+.moti_sot{
+    display: flex;
+}
+img#weatherIcon {
+    margin-left: -25REM;
+    margin-top: 2.5REM;
     
+}
+.motiHourly{
+    background-color: #202B3B;
+    margin-bottom: 5rem;
+    padding: 5px 30px 30px 30px;
+    display: table;
+    border-radius: 10px;
+}
+
+#hourly_icons td{
+    padding: 10px;
+}
+#tablee td {
+    padding: 10px;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+table {
+    border-collapse: separate;
+
+        border-spacing: 0;
+    }
+    th, td {
+        border-right: 1px solid #34455F;
+        padding: 10px;
+        height: 10px !important; /* Adjust the height value to your preference */
+    }
+    th:last-child, td:last-child {
+        border-right: none;
+    }
+    #hourly_icons img{
+        width: 100%;
+    }
+
+
+/* Air Conditions */
+.air_conditions {
+    display: inline-flex;
+    background-color: #202B3B;
+    margin-bottom: 5rem;
+    padding:30px 80px 30px 34px;
+        border-radius: 10px;
+}
+.right_air_conditions{
+    padding-left: 10REM;
+}
+</style>
+<body>
+        
     <div class="container">
-        <div class="temp">
-            <p>default</p>
+
+
+        <div class="moti_sot" >
+
+                <!-- MOTI per sot -->
+
+                <!-- Search -->
+                <div class="moti_sot_left">
+                        <nav>
+                            <form action="">
+                                <input type="text" placeholder="Search for a location" class="search_area" >
+                                <!-- <button type="submit" class="search_button">Search</button> -->
+                            </form>
+                        </nav>
+
+                        <!-- E kalxojn lokacionin -->
+                        <div class="time_location">
+                            <h3 style="font-size: 30px; font-weight: 500;"></h3>
+                        </div>
+
+                        <!-- feelike -->
+                        <div>
+                            <p class="feelLike"></p>
+                        </div>
+
+                        <!-- Temperaturen -->
+                        <div class="temp">
+                            <h2 style="font-size: 50px; font-weight: 500;"></h2>
+                        </div>
+                </div>
+
+
+                <div class="moti_sot_right">    
+                        <!-- Icona -->
+                        <div >
+                            <img id="weatherIcon"  alt="Weather Icon" style="width: 20REM; padding: 0px;">
+                        </div>
+                </div>
         </div>
 
-        <div class="time_location">
-            <p>default</p>
+
+
+        <!-- MOTI HOURLY -->
+   
+
+        <div class="motiHourly">
+            <p style="padding-left:10px; color:#f1f1f1; font-size: 18px; font-weight: 500;">Today's Forecast</p>
+            <!-- <div id="hour_temp"> <div id="tablee"></div><br></div> -->
+           
+            <table>
+                <tr>
+                    <th style="font-weight: 500; padding: 10px; color:#9398A3;">00:00 AM</th>
+                    <th style="font-weight: 500; padding: 10px; color:#9398A3;">04:00 AM</th>
+                    <th style="font-weight: 500; padding: 10px; color:#9398A3;">08:00 AM</th>
+                    <th style="font-weight: 500; padding: 10px; color:#9398A3;">12:00 PM</th>
+                    <th style="font-weight: 500; padding: 10px; color:#9398A3;">4:00 PM</th>
+                    <th style="font-weight: 500; padding: 10px; color:#9398A3;">8:00 PM</th>
+                </tr>
+                <!-- <tr id="hour_temp"></tr> -->
+                <tr id="hourly_icons"></tr>
+                <tr id="tablee"></tr>
+            </table>
         </div>
 
-        <div>
-            <p class="feelLike"></p>
-            <p class="maindescription"></p>
+        <hr style="height: 10px; color: red; background-color: green;">
 
-            <p class="description"></p>
+
+        <!-- AIR CONDITIONS -->
+        <div class="air_conditions">
+            <!-- Left section -->
+            <div class="left_air_conditions">
+                <!-- Real Feel section -->
+                <span class="left_air_first" style="display: flex;align-items: center;">
+                    <span class="air_icon">
+                        <img src="../images/temperature-1.svg" alt="" style="width: 44px; padding-right:15px">
+                    </span>
+                    <span class="air_text">
+                        <p>Real feel</p>
+                        <h2 id="Real_feel"></h2>
+                    </span>
+                </span>
+
+                <!-- Chance of rain section -->
+                <span class="left_air_second" style="display: flex;align-items: center;">
+                    <span class="air_icon">
+                        <img src="../images/drop-1.svg" alt="" style="width: 44px; padding-right:15px">
+                    </span>
+                    <span class="air_text">
+                        <p>Chance of Rain</p>
+                        <h2 id="Chance_of_rain"></h2>
+                    </span>
+                </span>
+            </div>
+
+
+
+        <!-- right section -->
+            <div class="right_air_conditions" >
+                <!-- Real Feel section -->
+                <span class="right_air_first" style="display: flex; align-items: center;">
+                    <span class="air_icon">
+                        <img src="../images/wind.svg" alt="" style="width: 44px; padding-right:15px">
+                    </span>
+                    <span class="air_text">
+                        <p>Wind</p>
+                        <h2 id="Wind"></h2>
+                    </span>
+                </span>
+
+                <!-- Chance of rain section -->
+                <span class="right_air_second" style="display: flex;align-items: center;">
+                    <span class="air_icon">
+                        <img src="../images/UV.svg" alt="" style="width: 44px; padding-right:15px">
+                    </span>
+                    <span class="air_text">
+                        <p>UV index</p>
+                        <h2 id="UV_index"></h2>
+                    </span>
+                </span>
+            </div>
         </div>
 
-        <div class="condition">
-            <p>default</p>
+<hr style="height: 10px; color: red; background-color: green;">
+        <!-- Moti per ton javen -->
+        <h1 style="background-color: rgb(134, 55, 55);"><b>MOTI JAVOR</b></h1>
+        <div class="DailyTemp">
+            <p></p>
         </div>
 
-        <div >
-            <img  id="weatherIcon"  alt="Weather Icon">
-        </div>
+      
 
-        <nav>
-            <form action="">
-                <input type="text" placeholder="Search for a location" class="search_area" >
-                <button type="submit" class="search_button">Search</button>
-            </form>
-        </nav>
+       
     </div>
 </body>
 <script src="../js/script.js"></script>
