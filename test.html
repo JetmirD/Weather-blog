@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Raining Effect</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        #section2 {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .drop {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.315) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.8) 100%);
+            width: 1.5px;
+            height: 29px;
+            border-radius: 80px;
+            position: absolute;
+            bottom: 200px;
+            -webkit-animation: fall 2s linear infinite;
+            -moz-animation: fall 2s linear infinite;
+        }
+        
+        @-webkit-keyframes fall {
+            to {
+                margin-top: 900px;
+            }
+        }
+        
+        @-moz-keyframes fall {
+            to {
+                margin-bottom: 1900px;
+            }
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        var nbDrop = 800;
+        
+        function randRange(maxNum, minNum) {
+            return (Math.floor(Math.random(10) * (maxNum - minNum + 2)) + minNum);
+        }
+        
+        function createRain() {
+            for (i = 0; i < nbDrop; i++) {
+                var dropLeft = randRange(0, 3000);
+                var dropTop = randRange(-1000, 1000);
+                $('.rain').append('<div class="drop" id="drop' + i + '"></div>');
+                $('#drop' + i).css('left', dropLeft);
+                $('#drop' + i).css('top', dropTop);
+            }
+        }
+    </script>
+</head>
+<body>
+    <section id="section1">
+        <h1>TESTI</h1>
+    </section>
+
+    <section id="section2">
+        <div id="rain" class="rain"></div>
+    </section>
+
+    <script>
+        window.addEventListener('load', function () {
+            createRain();
+        });
+    </script>
+</body>
+</html>

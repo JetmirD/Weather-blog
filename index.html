@@ -7,6 +7,53 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 
     <title>Document</title>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        #section2 {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background-color: #0D343A;
+        }
+        
+        .drop {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.315) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.8) 100%);
+            width: 1.5px;
+            height: 29px;
+            border-radius: 80px;
+            position: absolute;
+            bottom: 200px;
+            -webkit-animation: fall 2.5s linear infinite;
+            -moz-animation: fall 2.5s linear infinite;
+        }
+        
+       
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        var nbDrop = 800;
+        
+        function randRange(maxNum, minNum) {
+            return (Math.floor(Math.random(10) * (maxNum - minNum + 1)) + minNum);
+        }
+        
+        function createRain() {
+            for (i = 0; i < nbDrop; i++) {
+                var dropLeft = randRange(0, 3000);
+                var dropTop = randRange(-1000, 1000);
+                $('.rain').append('<div class="drop" id="drop' + i + '"></div>');
+                $('#drop' + i).css('left', dropLeft);
+                $('#drop' + i).css('top', dropTop);
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -104,6 +151,20 @@
         </div>
     </div>
  
+
+
+
+    <section id="section2">
+        <div id="rain" class="rain"></div>
+        <h1 style="font-size: 50px; margin-top:20%;text-align: center; color: white; font-family: rubik; position: relative; z-index: 2; text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);">
+            In Our website you can get informed <br>for the weather in real time
+        </h1>
+            </section>
+    <script>
+        window.addEventListener('load', function () {
+            createRain();
+        });
+    </script>
 </body>
 <script src="./js/script.js"></script>
 
