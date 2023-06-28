@@ -44,7 +44,7 @@ img#weatherIcon {
 }
 .motiHourly{
     background-color: #202B3B;
-    margin-bottom: 5rem;
+    margin-bottom: 1.5REM;
     padding: 5px 30px 30px 30px;
     display: table;
     border-radius: 10px;
@@ -65,33 +65,67 @@ table {
 
         border-spacing: 0;
     }
-    th, td {
+    .th, #tempCell, #imageCell {
         border-right: 1px solid #34455F;
         padding: 10px;
         height: 10px !important; /* Adjust the height value to your preference */
     }
-    th:last-child, td:last-child {
+    th:last-child, td:last-child, #imageCell:last-child, #tempCell:last-child {
         border-right: none;
     }
     #hourly_icons img{
         width: 100%;
     }
+th{
+    border-right: 1px solid #34455F;
+        padding: 10px;
+        height: 10px !important; /* Adjust the height value to your preference */
+}
 
 
+td#imageCell {
+    padding: 0px 21px 0px 21px;
+}
 /* Air Conditions */
 .air_conditions {
     display: inline-flex;
     background-color: #202B3B;
     margin-bottom: 5rem;
-    padding:30px 80px 30px 34px;
+    padding:30px 110px 30px 29px;
         border-radius: 10px;
 }
 .right_air_conditions{
-    padding-left: 10REM;
+    padding-left: 14REM;
+}
+
+
+    .main_container {
+    display: flex;
+    justify-content: space-around;
+}
+
+#forecastTable td{
+    border-bottom: 1px solid #34455F;
+    padding: 20px;
+    color: #9398A3;
+}
+
+
+table#forecastTable {
+    height: 0px;
+}
+
+p.\37 -day {
+    /* margin-right: -15REM; */
+    /* margin-left: 14REM; */
+    margin-right: 25REM;
+    margin-left: -40REM;
+    color: #e8eaee;
+    font-weight: 500;
 }
 </style>
 <body>
-        
+    <div class="main_container">
     <div class="container">
 
 
@@ -144,12 +178,12 @@ table {
            
             <table>
                 <tr>
-                    <th style="font-weight: 500; padding: 10px; color:#9398A3;">00:00 AM</th>
-                    <th style="font-weight: 500; padding: 10px; color:#9398A3;">04:00 AM</th>
-                    <th style="font-weight: 500; padding: 10px; color:#9398A3;">08:00 AM</th>
-                    <th style="font-weight: 500; padding: 10px; color:#9398A3;">12:00 PM</th>
-                    <th style="font-weight: 500; padding: 10px; color:#9398A3;">4:00 PM</th>
-                    <th style="font-weight: 500; padding: 10px; color:#9398A3;">8:00 PM</th>
+                    <th class="th"style="font-weight: 500; padding: 10px; color:#9398A3;">00:00 AM</th>
+                    <th class="th"style="font-weight: 500; padding: 10px; color:#9398A3;">04:00 AM</th>
+                    <th class="th"style="font-weight: 500; padding: 10px; color:#9398A3;">08:00 AM</th>
+                    <th class="th"style="font-weight: 500; padding: 10px; color:#9398A3;">12:00 PM</th>
+                    <th class="th"style="font-weight: 500; padding: 10px; color:#9398A3;">4:00 PM</th>
+                    <th class="th"style="font-weight: 500; padding: 10px; color:#9398A3;">8:00 PM</th>
                 </tr>
                 <!-- <tr id="hour_temp"></tr> -->
                 <tr id="hourly_icons"></tr>
@@ -157,7 +191,6 @@ table {
             </table>
         </div>
 
-        <hr style="height: 10px; color: red; background-color: green;">
 
 
         <!-- AIR CONDITIONS -->
@@ -215,15 +248,16 @@ table {
             </div>
         </div>
 
-<hr style="height: 10px; color: red; background-color: green;">
         <!-- Moti per ton javen -->
-        <h1 style="background-color: rgb(134, 55, 55);"><b>MOTI JAVOR</b></h1>
-        <div class="DailyTemp">
-            <p></p>
-        </div>
+    </div>
+
+   
+                <table id="forecastTable" style="background-color: #202B3B; border-radius: 10px; padding: 10px 20px 10px 20px;">
+                </table>
+                <p class="7-day">7-day forecast</p>
 
       
-
+  
        
     </div>
 </body>

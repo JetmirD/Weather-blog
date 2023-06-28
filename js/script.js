@@ -1,7 +1,7 @@
 const temperatureField = document.querySelector(".temp h2");
 const locationField = document.querySelector(".time_location h3");
 const dateField = document.querySelector(".time_location span")
-const DailyTemp = document.querySelector(".DailyTemp p");
+const DailyTemp = document.querySelector(".DailyTemp");
 const searchField = document.querySelector(".search_area");
 const feelLikes = document.querySelector(".feelLike");
 const maindescription = document.querySelector(".maindescription");
@@ -18,6 +18,7 @@ const real_feel = document.getElementById("Real_feel")
 const chance_rain = document.getElementById("Chance_of_rain")
 const wind = document.getElementById("Wind")
 const UV_index = document.getElementById("UV_index")
+const tablee = document.getElementById('forecastTable'); 
 
 form.addEventListener('submit', searchForLocation)
 let target = 'Kosovo'
@@ -25,7 +26,7 @@ let target = 'Kosovo'
 
 const fetchResults = async(targetLocation)=>{
 
-        let url = `https://api.weatherapi.com/v1/forecast.json?key=c8a101a2148e4ec5ab6191532232106&q=${targetLocation}&days=6&aqi=no&alerts=no`
+        let url = `https://api.weatherapi.com/v1/forecast.json?key=c8a101a2148e4ec5ab6191532232106&q=${targetLocation}&days=7&aqi=no&alerts=no`
 
         const res = await fetch(url)
 
@@ -46,19 +47,19 @@ const fetchResults = async(targetLocation)=>{
 
         const forecastdata = data.forecast.forecastday
         const dates = forecastdata.map((forecastItem) => forecastItem.date);
-
+        tablee.innerHTML=""
         forecastdata.forEach((forecastItem)=>{
+
             const date = forecastItem.date
             const tempDay = forecastItem.day.maxtemp_c
+          const tempDayIcon = forecastItem.day.condition.icon;
 
-            //Kjo i dergon t dhanat ne updateform function     
-            updateTodayWeather(tempDisplay, locationName, name, condition, icon, date, tempDay, dates)
+          //Kjo i dergon t dhanat ne updateform function     
+            updateTodayWeather(tempDisplay, locationName, name, condition, icon, date, tempDay, /*dates,*/ tempDayIcon)
         })
         // Clear previous data
         timee.innerHTML = ""; // Clear the content of the row before fetching new data
         hourlyIcon.innerHTML = ""; // Clear the content of the row before fetching new data
-
-
 
         //PER HOURLY WEATHER
         const forecastHourlyData = data.forecast.forecastday[0].hour;
@@ -70,7 +71,6 @@ const fetchResults = async(targetLocation)=>{
             if (index % 4 === 0) {
           
             hourlyWeather(HourlyTemp, HourlyIcon);
-            console.log(HourlyIcon  )
 
             }
 
@@ -91,7 +91,7 @@ const fetchResults = async(targetLocation)=>{
 
 
     //Me marr motin e sotit
-    function updateTodayWeather(temp, location, name, condition, icon, date, tempDay){ 
+    function updateTodayWeather(temp, location, name, condition, icon, date, tempDay, tempDayIcon){ 
 
         //Temperatura
         temperatureField.innerText = temp + "°C"
@@ -106,9 +106,27 @@ const fetchResults = async(targetLocation)=>{
         feelLikes.innerText = "Feels Like: "+condition; 
 
         // Append the forecast item text to the DailyTemp element
-        const forecastItemText = `<b>${date}</b> - ${tempDay}°C<br>`;
-        DailyTemp.innerHTML += forecastItemText;
+        // const forecastItemText = `<span class="spani">${date}</span> - ${tempDay}°C - ${tempDayIcon}<br>`;
+        // DailyTemp.innerHTML += forecastItemText;
   
+
+        const newRow = tablee.insertRow();
+
+        // Insert data into the row cells
+        const dateCell = newRow.insertCell();
+        dateCell.innerHTML = date;
+      
+        const tempDayIconCell = newRow.insertCell();
+        const tempDayIconImage = document.createElement('img');
+        tempDayIconImage.src = tempDayIcon;
+        tempDayIconCell.appendChild(tempDayIconImage);
+
+      
+        const tempDayCell = newRow.insertCell();
+        tempDayCell.innerHTML = tempDay+" °C";
+
+
+       
     }
 
     //funksion per me marr motin hourly
@@ -118,10 +136,14 @@ const fetchResults = async(targetLocation)=>{
 
         const tempCell = document.createElement("td");
         tempCell.textContent = HourlyTemp.toString() + "°C"; // Convert HourlyTemp to a string
+        tempCell.id = "tempCell";
+
         tempElement.id = "hourlytemp";
 
 
         const imageCell = document.createElement("td");
+        imageCell.id = "imageCell";
+
         const imageElement = document.createElement("img");
         imageElement.src = HourlyIcon;
         imageElement.alt = "Weather Icon";
