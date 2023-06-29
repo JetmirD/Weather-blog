@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"><style></style>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 
     <title>Document</title>
@@ -13,7 +14,7 @@
           height: 100%;
           margin: 0;
           padding: 0;
-          cursor: none;
+          /* cursor: none; */
 
         }
       
@@ -55,10 +56,10 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.445);
     border: 4px solid rgb(122, 253, 0);
     z-index: 9999;
     pointer-events: none;
@@ -72,6 +73,23 @@
     100% {
         transform: scale(1.2);
     }
+}
+section.News_section {
+    display: flex;
+    justify-content: center;
+    
+}
+.news_right {
+    margin-top: 10%;
+}
+
+.news_h1 {
+    font-family: rubik;
+    font-size: 40px;
+    font-weight: 500;
+}
+button{
+    cursor: none;
 }
       </style>
 
@@ -104,13 +122,13 @@
             </div>
 
             <div class="second-col-header">
-                <nav >
+                <nav style="background-color: white;">
                     <ul>
-                      <li><a href="#">Home</a></li>
-                      <li><a href="#">About</a></li>
-                      <li><a href="#">Services</a></li>
-                      <li><a href="#">Portfolio</a></li>
-                      <li><a href="#">Contact</a></li>
+                      <li><a href="#" style="color:black;font-weight: 500;font-size: 17px;">Home</a></li>
+                      <li><a href="#" style="color:black;font-weight: 500;font-size: 17px;">About</a></li>
+                      <li><a href="#" style="color:black;font-weight: 500;font-size: 17px;">Services</a></li>
+                      <li><a href="#" style="color:black;font-weight: 500;font-size: 17px;">Portfolio</a></li>
+                      <li><a href="#" style="color:black;font-weight: 500;font-size: 17px;">Contact</a></li>
                     </ul>
                   </nav>
             </div>
@@ -141,7 +159,6 @@
                 </div>
             
 
-                <div class="circle">Hello</div>
 
 
 
@@ -202,7 +219,115 @@
             </div>
         </div>
             </section>
-    <script>
+
+            <section class="News_section">
+                <div class="news_left">
+                    <video src="./images/earth.mp4" autoplay="true"></video>
+                </div>
+                <div class="news_right">
+                    <h1 class="news_h1">Find the latest World News <br>In just one tap!</h1>
+                    <button style="background-color: #243653;border-radius:10px; color:white;padding:15px 20px 15px 20px;border:none; font-family:rubik; font-size:15px; cursor: none;">Read News</button>
+
+                </div>
+            </section>
+
+
+            <!-- NEWS TICKER -->
+     <section class="news_ticker">
+<div class="container mt-100 mt-60">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="section-title mb-4 pb-2">
+                <h4 class="title mb-4" style="font-family: rubik;">Latest Blog &amp; News</h4>
+                <p class="text-muted para-desc mx-auto mb-0">These are the newest news you can read about world updates</p>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    <div class="row">
+        <div class="col-lg-4 col-md-6 mt-4 pt-2">
+            <div class="blog-post rounded border">
+                <div class="blog-img d-block overflow-hidden position-relative">
+                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/230628195551-uk-royal-household-financial-statement-2023-intl.jpg?c=16x9&q=h_438,w_780,c_fill" class="img-fluid rounded-top" alt="">
+                    <div class="overlay rounded-top bg-dark"></div>
+                    <div class="post-meta">
+                        <a href="javascript:void(0)" class="text-light d-block text-right like"><i class="mdi mdi-heart"></i> 33</a>
+                        <a href="javascript:void(0)" class="text-light read-more">Read More <i class="mdi mdi-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="content p-3">
+                    <small class="text-muted p float-right">19th Oct, 19</small>
+                    <small><a href="javascript:void(0)" class="text-primary">Marketing</a></small>
+                    <h4 class="mt-2"><a href="javascript:void(0)" class="text-dark title">UK Royal Household spending exceeded income last year, annual financial statement shows</a></h4>
+                    <p class="text-muted mt-2">UK Royal Household spending exceeded income last year, annual financial statement shows...</p>
+                    <div class="pt-3 mt-3 border-top d-flex">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
+                        <div class="author mt-2">
+                            <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Jetmir Demiri</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end blog post-->
+        </div><!--end col-->
+        
+        <div class="col-lg-4 col-md-6 mt-4 pt-2">
+            <div class="blog-post rounded border">
+                <div class="blog-img d-block overflow-hidden position-relative">
+                    <img src="./images/news2.jpg" class="img-fluid rounded-top" alt="">
+                    <div class="overlay rounded-top bg-dark"></div>
+                    <div class="post-meta">
+                        <a href="javascript:void(0)" class="text-light d-block text-right like"><i class="mdi mdi-heart"></i> 33</a>
+                        <a href="javascript:void(0)" class="text-light read-more">Read More <i class="mdi mdi-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="content p-3">
+                    <small class="text-muted p float-right">19th Oct, 19</small>
+                    <small><a href="javascript:void(0)" class="text-primary">Event</a></small>
+                    <h4 class="mt-2"><a href="javascript:void(0)" class="text-dark title">France sees third night of violence after 17-year-old shot dead by police
+
+                    </a></h4>
+                    <p class="text-muted mt-2">There is now an abundance of readable dummy texts. These are usually used when a text is required purely to fill a space.</p>
+                    <div class="pt-3 mt-3 border-top d-flex">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
+                        <div class="author mt-2">
+                            <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Jetmir Demiri</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end blog post-->
+        </div><!--end col-->
+        
+        <div class="col-lg-4 col-md-6 mt-4 pt-2">
+            <div class="blog-post rounded border">
+                <div class="blog-img d-block overflow-hidden position-relative">
+                    <img src="./images/news3.jpg" class="img-fluid rounded-top" alt="">
+                    <div class="overlay rounded-top bg-dark"></div>
+                    <div class="post-meta">
+                        <a href="javascript:void(0)" class="text-light d-block text-right like"><i class="mdi mdi-heart"></i> 33</a>
+                        <a href="javascript:void(0)" class="text-light read-more">Read More <i class="mdi mdi-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="content p-3">
+                    <small class="text-muted p float-right">19th Oct, 19</small>
+                    <small><a href="javascript:void(0)" class="text-primary">Software</a></small>
+                    <h4 class="mt-2"><a href="javascript:void(0)" class="text-dark title">World’s largest ‘wood city’ to be built in Stockholm</a></h4>
+                    <p class="text-muted mt-2">There is now an abundance of readable dummy texts. These are usually used when a text is required purely to fill a space.</p>
+                    <div class="pt-3 mt-3 border-top d-flex">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
+                        <div class="author mt-2">
+                            <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Jetmir Demiri</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end blog post-->
+        </div><!--end col-->
+    </div><!--end row-->
+</div>
+</section>
+
+<!-- E AKTIVIZOJ PER KURSOR -->
+
+    <!-- <script>
         window.addEventListener('load', function () {
             createRain();
         });
@@ -212,7 +337,7 @@
         cursor.style.left = e.clientX + "px";
         cursor.style.top = e.clientY + "px";
     });
-    </script>
+    </script> -->
 </body>
 <script src="./js/script.js"></script>
 
