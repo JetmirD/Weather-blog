@@ -10,31 +10,44 @@
 
     <style>
         html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
+          height: 100%;
+          margin: 0;
+          padding: 0;
         }
- 
+      
         #section2 {
-            height: 100vh;
-            position: relative;
-            overflow: hidden;
-            background-color: #0D343A;
+          height: 100vh;
+          position: relative;
+          overflow: hidden;
+          background-color: #0D343A;
         }
-        
+      
         .drop {
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.315) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.8) 100%);
-            width: 1.5px;
-            height: 29px;
-            border-radius: 80px;
-            position: absolute;
-            bottom: 200px;
-            -webkit-animation: fall 2.5s linear infinite;
-            -moz-animation: fall 2.5s linear infinite;
+          width: 1.5px;
+          border-radius: 50%;
+          position: absolute;
+          bottom: 200px;
+          -webkit-animation: fall 2s linear infinite;
+          -moz-animation: fall 2s linear infinite;
         }
-        
-       
-    </style>
+      
+        /* Adjusted gradient for raindrop shape */
+        .drop:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(to bottom, transparent 0%, #89daff 20%, #44a1cc 50%, #338cb6 80%, transparent 100%);
+          border-radius: 50%;
+          transform: translateY(50%);
+        }
+
+        .container {
+    height: 100%;
+}
+      </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
@@ -118,6 +131,17 @@
         </div>
 
 
+    </div>
+ 
+
+
+
+    <section id="section2">
+        <div id="rain" class="rain"></div>
+        <h1 style="font-size: 50px; margin-top:10%;text-align: center; color: white; font-family: rubik; position: relative; z-index: 2; text-shadow: 0px 0px 20px rgb(245, 255, 106);">
+            In Our website you can get informed <br>for the weather in real time
+        </h1>
+        
         <div class="slider">
             <input type="radio" name="testimonial" id="t-1">
             <input type="radio" name="testimonial" id="t-2">
@@ -149,16 +173,6 @@
                 <label for="t-5"></label>
             </div>
         </div>
-    </div>
- 
-
-
-
-    <section id="section2">
-        <div id="rain" class="rain"></div>
-        <h1 style="font-size: 50px; margin-top:20%;text-align: center; color: white; font-family: rubik; position: relative; z-index: 2; text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);">
-            In Our website you can get informed <br>for the weather in real time
-        </h1>
             </section>
     <script>
         window.addEventListener('load', function () {
