@@ -175,3 +175,24 @@ const fetchResults = async(targetLocation)=>{
 
 
 fetchResults(target)
+
+
+
+const app = new PIXI.Application({ background: '#1099bb', width:0 });
+document.body.appendChild(app.view);
+
+// Css style for icons
+const defaultIcon = 'url(\'https://cdn4.iconfinder.com/data/icons/the-weather-is-nice-today/64/weather_3-64.png\'),auto';
+const hoverIcon = 'url(\'https://pixijs.com/assets/bunny_saturated.png\'),auto';
+
+// Add custom cursor styles to the body element
+document.body.style.cursor = defaultIcon;
+
+// Change cursor on mouse enter/leave events
+app.view.addEventListener('mouseenter', () => {
+  document.body.style.cursor = hoverIcon;
+});
+
+app.view.addEventListener('mouseleave', () => {
+  document.body.style.cursor = defaultIcon;
+});

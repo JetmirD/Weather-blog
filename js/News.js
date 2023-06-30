@@ -1,3 +1,23 @@
+const app = new PIXI.Application({ background: '#1099bb', width:0 });
+document.body.appendChild(app.view);
+
+// Css style for icons
+const defaultIcon = 'url(\'https://cdn2.iconfinder.com/data/icons/flat-set-2/64/flat_set_2-07-64.png\'),auto';
+const hoverIcon = 'url(\'https://pixijs.com/assets/bunny_saturated.png\'),auto';
+
+// Add custom cursor styles to the body element
+document.body.style.cursor = defaultIcon;
+
+// Change cursor on mouse enter/leave events
+app.view.addEventListener('mouseenter', () => {
+  document.body.style.cursor = hoverIcon;
+});
+
+app.view.addEventListener('mouseleave', () => {
+  document.body.style.cursor = defaultIcon;
+});
+
+
 let target ="Politics"
 
 const containers = [

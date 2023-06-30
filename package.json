@@ -1,0 +1,22 @@
+{
+  "name": "weather-blog",
+  "version": "1.0.0",
+  "description": "Pixi",
+  "main": "scrript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JetmirD/Weather-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JetmirD/Weather-blog/issues"
+  },
+  "homepage": "https://github.com/JetmirD/Weather-blog#readme",
+  "dependencies": {
+    "pixi.js": "^7.2.4"
+  }
+}

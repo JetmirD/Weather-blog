@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"><style></style>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="https://pixijs.download/release/pixi.js"></script>
 
     <title>Document</title>
 
@@ -216,6 +217,83 @@ button{
             </div>
         </div>
             </section>
+
+
+            <!-- PIXIJS CODE -->
+            <section>
+                <script>
+              
+              const app = new PIXI.Application({ background: '#1099bb', resizeTo: window });
+              
+              document.body.appendChild(app.view);
+              
+              const skewStyle = new PIXI.TextStyle({
+                  fontFamily: 'Arial',
+                  dropShadow: true,
+                  dropShadowAlpha: 0.8,
+                  dropShadowAngle: 2.1,
+                  dropShadowBlur: 4,
+                  dropShadowColor: '0x111111',
+                  dropShadowDistance: 10,
+                  fill: ['#ffffff'],
+                  stroke: '#004620',
+                  fontSize: 60,
+                  fontWeight: 'lighter',
+                  lineJoin: 'round',
+                  strokeThickness: 12,
+              });
+              
+              const skewText = new PIXI.Text('Weather And News with PIXI.JS', skewStyle);
+              
+              skewText.skew.set(0.65, -0.3);
+              skewText.anchor.set(0.5, 0.5);
+              skewText.x = 700;
+              skewText.y = 160;
+              
+              app.stage.addChild(skewText);
+              
+
+
+document.body.appendChild(app.view);
+
+const container = new PIXI.Container();
+
+app.stage.addChild(container);
+
+// Create a new texture
+const texture = PIXI.Texture.from('https://cdn1.iconfinder.com/data/icons/weather-306/100/Icon_13-2-61_1-64.png');
+
+// Create a 5x5 grid of bunnies
+for (let i = 0; i < 25; i++)
+{
+    const bunny = new PIXI.Sprite(texture);
+
+    bunny.anchor.set(0.5);
+    bunny.x = (i % 5) * 40;
+    bunny.y = Math.floor(i / 5) * 40;
+    container.addChild(bunny);
+}
+
+// Move container to the center
+container.x = app.screen.width / 2;
+container.y = app.screen.height / 2;
+
+// Center bunny sprite in local container coordinates
+container.pivot.x = container.width / 2;
+container.pivot.y = container.height / 2;
+
+// Listen for animate update
+app.ticker.add((delta) =>
+{
+    // rotate the container!
+    // use delta to create frame-independent transform
+    container.rotation -= 0.01 * delta;
+});
+
+                </script>
+                </section>
+
+
 
             <section class="News_section">
                 <div class="news_left">
