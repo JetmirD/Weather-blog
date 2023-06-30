@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"><style></style>
+
+    <style>body{
+        background-color: #eee;
+        margin-top:20px;
+    }
+    .media.media-news {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+        padding-bottom: 210px;
+    }
+    @media (min-width: 768px) {
+        .media.media-news {
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+    }
+    @media (min-width: 1200px) {
+        .media.media-news {
+            padding-bottom: 25px;
+            margin-bottom: 0;
+        }
+    }
+    .media.media-news .media-body {
+        padding: 20px;
+        box-shadow: 0 22px 28px 0 rgba(0, 0, 0, 0.06);
+        background: #fff;
+        position: absolute;
+        width: 85%;
+        right: 0;
+        bottom: 0;
+    }
+    @media (min-width: 768px) {
+        .media.media-news .media-body {
+            position: relative;
+            padding: 46.5px 35px;
+            right: 0;
+        }
+    }
+    @media (min-width: 992px) {
+        .media.media-news .media-body {
+            right: 40px;
+            bottom: 0;
+        }
+    }
+    @media (min-width: 1200px) {
+        .media.media-news .media-body {
+            position: absolute;
+            right: 35px;
+            width: 60%;
+            padding: 20px;
+        }
+    }
+    .media.media-news .media-body .media-date {
+        font-family: "Open Sans", sans-serif;
+        color: #848484;
+        margin-bottom: 10px;
+    }
+    .media.media-news .media-body h5 {
+        font-size: 22px;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+    .media.media-news .media-body h5.small {
+        font-size: 16px;
+    }
+    .media.media-news .media-body p {
+        font-family: "Open Sans", sans-serif;
+        color: #848484;
+    }
+    .media.media-news .media-body .common-btn {
+        margin-top: 10px;
+    }
+    
+    
+    
+    /* PER SECTION 1 */
+    h1{ background: none repeat scroll 0 0 #5BC0DE; color:#fff!important; padding:10px 0; text-align:center; margin-bottom:20px!important;}
+p.cr{font-size:0.75em; color:#666; background:#eee; padding:5px; margin-top:20px;}
+p.cr > strong{color:#F1645E;}
+
+.debug > .row > div {box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;
+}
+
+.debug > .row > div:nth-child(3n+1) {background-color: #5F8EFC;}
+.debug > .row > div:nth-child(3n+2) {background-color: #FEBA00;}
+.debug > .row > div:nth-child(3n) {background-color: #F1645E;}
+  
+.img1{background:url(https://telegrafi.com/wp-content/uploads/2023/06/foto5-780x439.jpg);width:400px;height:300px !important;}
+.img2{background:url(https://telegrafi.com/wp-content/uploads/2023/06/Daut-Mehmeti-780x439.png);width:400px;height:300px !important;}
+.img3{background:url(https://telegrafi.com/wp-content/uploads/2017/07/sherbimi-korrektues.jpg);width:400px;height:300px !important;}
+
+
+
+
+/* PER HEADER */
+nav {
+    background-color: #333;
+    color: #fff;
+    height: 50px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    background-color: #555;
+  }
+  
+
+  .butoni1 {
+    background-color: non;
+    background-color: none;
+    border: none;
+    background-color: #333333;
+    color: white;
+    padding: 17px 29px 17px 29px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.header {
+    justify-content: space-between;
+}
+.left-section-body {
+    text-align: right;
+}
+
+
+
+/* PER FOOTER */
+
+footer {
+  background-color: #2c3e50;
+  color:white;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.footer-links li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.footer-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links li a:hover {
+  text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+
+
+
+
+
+    <div class="container">
+        <div class="header" style="display:flex;">
+            <div class="first-col-header">
+                <img src="../images/logo.jpg" style="width:100px;"alt="">
+            </div>
+
+            <div class="second-col-header">
+                <nav style="background-color: white;">
+                    <ul>
+                        <li><a href="http://127.0.0.1:5500/" style="color:black;font-weight: 500;font-size: 17px;">Home</a></li>
+                        <li><a href="http://127.0.0.1:5500/html/Weather.html" style="color:black;font-weight: 500;font-size: 17px;">Weather</a></li>
+                        <li><a href="http://127.0.0.1:5500/html/News.html" style="color:black;font-weight: 500;font-size: 17px;">News</a></li>
+                        <li><a href="#" style="color:black;font-weight: 500;font-size: 17px;">Portfolio</a></li>
+                        <li><a href="#" style="color:black;font-weight: 500;font-size: 17px;">Contact</a></li>
+                      </ul>
+                  </nav>
+            </div>
+            <div class="third-col-header">
+                <button class="butoni1">Download app</button>
+            </div>
+        </div>
+        <h1>Recent News</h1>
+
+        <div style="padding:0 15px; margin-bottom:10%">
+          <div class="row">
+            <div class="col-xs-8 col-sm-4">
+
+              <div class="img-thumbnail img1" alt="photo1" style="cursor: pointer; ">
+                <h3 style="margin-top: 58%;color:white;text-shadow: 0px 0px 10px black; background-color: rgba(51, 51, 51, 0.658);">Këshilli i BE-së thirrje për de-eskalimin e situatës në veri</h3>
+
+              </div>  
+            </div>
+            <div class="col-xs-4 col-sm-8"> 
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="img-thumbnail img2" alt="photo2" style="cursor: pointer;">
+                    <h3 style="margin-top: 58%;color:white;text-shadow: 0px 0px 10px black; background-color: rgba(51, 51, 51, 0.658);">Nga Daut Mehmeti dyshohet se janë kurdisur edhe ...
+                    </h3>
+
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="img-thumbnail img3" alt="photo3" style="cursor: pointer;" >
+                    <h3 style="margin-top: 58%;color:white;text-shadow: 0px 0px 10px black; background-color: rgba(51, 51, 51, 0.658);">Shërbimi Korrektues i Kosovës shpall konkurs për...</h3>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h1 style="margin-bottom:7%">Our Latest News</h1>
+        <div class="row no-gutters">
+          <div class="col-xl-6 col-12 mb-5 mb-xl-0">
+            <div class="media media-news">
+              <div class="media-img">
+                <img style="width:80%; height:70%"id="image1" src="https://www.bootdey.com/image/350x280/FFB6C1/000000" alt="Generic placeholder image">
+              </div>
+              <div class="media-body">
+                <span class="media-date">25 july 2017</span>
+                <h5 class="mt-0 sep" id="container1">Finibus Bonorum Malor.</h5>
+                <p id="text1">Lorem ipsum dolor amet consectetur adip sicing elit sed eiusm tempor incididunt ut labore dolore.</p>
+                <a href="blog-post-right-sidebar.html" class="btn btn-transparent">View More</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-xl-6 col-12">
+            <div class="media media-news">
+              <div class="media-img">
+                <img style="width:80%; height:70%" id="image2" src="https://www.bootdey.com/image/350x280/87CEFA/000000" alt="Generic placeholder image">
+              </div>
+              <div class="media-body">
+                <span class="media-date">13 August 2018</span>
+                 <h5 class="mt-0 sep" id="container2"> Tincidunt dui ornare</h5>
+                <p id="text2" >Facilisi morbi tempus iaculis urna id volutpat lacus. Mi eget mauris pharetra et. Fermentum iaculis</p>
+                <a href="blog-post-right-sidebar.html" class="btn btn-transparent">View More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row no-gutters mt-4">
+          <div class="col-xl-6 col-12 mb-5 mb-xl-0">
+            <div class="media media-news">
+              <div class="media-img">
+                <img style="width:80%; height:70%; height:70%"  id="image3" src="https://www.bootdey.com/image/350x280/FF7F50/000000" alt="Generic placeholder image">
+              </div>
+              <div class="media-body">
+                <span class="media-date">25 july 2017</span>
+                <h5 class="mt-0 sep" id="container3">Finibus Bonorum Malor.</h5>
+                <p id="text3">Lorem ipsum dolor amet consectetur adip sicing elit sed eiusm tempor incididunt ut labore dolore.</p>
+                <a href="blog-post-right-sidebar.html" class="btn btn-transparent">View More</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-xl-6 col-12">
+            <div class="media media-news">
+              <div class="media-img">
+                <img style="width:80%; height:70%" id="image4" src="https://www.bootdey.com/image/350x280/20B2AA/000000" alt="Generic placeholder image">
+              </div>
+              <div class="media-body">
+                <span class="media-date">13 August 2018</span>
+                 <h5 class="mt-0 sep" id="container4"> Tincidunt dui ornare</h5>
+                <p id="text4">Facilisi morbi tempus iaculis urna id volutpat lacus. Mi eget mauris pharetra et. Fermentum iaculis</p>
+                <a href="blog-post-right-sidebar.html" class="btn btn-transparent">View More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    
+        <!-- FOOTERIII -->
+
+        <footer>
+            <div class="container">
+              <p>&copy; 2023 Your Website. All rights reserved.</p>
+              <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </footer>
+</body>
+<script src="../js/News.js"></script>
+
+</html>

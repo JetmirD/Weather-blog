@@ -123,12 +123,118 @@ p.\37 -day {
     color: #e8eaee;
     font-weight: 500;
 }
+
+
+
+
+
+
+/* PER HEADER */
+nav {
+    background-color: #333;
+    color: #fff;
+    height: 50px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    color: white;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    background-color: #555;
+  }
+  
+
+  .butoni1 {
+    background-color: non;
+    background-color: none;
+    border: none;
+    background-color: #333333;
+    color: white;
+    padding: 17px 29px 17px 29px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.header {
+    justify-content: space-between;
+}
+.left-section-body {
+    text-align: right;
+}
+
+
+
+/* PER FOOTER */
+
+footer {
+  background-color: #2c3e50;
+  color:white;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.footer-links li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.footer-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links li a:hover {
+  text-decoration: underline;
+}
+
 </style>
 <body>
     <div class="main_container">
     <div class="container">
 
+        <div class="header" style="display:flex;">
+            <div class="first-col-header">
+                <img src="../images/logo.jpg" style="width:100px;"alt="">
+            </div>
 
+            <div class="second-col-header">
+                <nav style="background-color: transparent;">
+                    <ul>
+                        <li><a href="http://127.0.0.1:5500/" style="color:white;font-weight: 500;font-size: 17px;">Home</a></li>
+                        <li><a href="http://127.0.0.1:5500/html/Weather.html" style="color:white;font-weight: 500;font-size: 17px;">Weather</a></li>
+                        <li><a href="http://127.0.0.1:5500/html/News.html" style="color:white;font-weight: 500;font-size: 17px;">News</a></li>
+                        <li><a href="#" style="color:white;font-weight: 500;font-size: 17px;">Portfolio</a></li>
+                        <li><a href="#" style="color:white;font-weight: 500;font-size: 17px;">Contact</a></li>
+                      </ul>
+                  </nav>
+            </div>
+            <div class="third-col-header">
+                <button class="butoni1">Download app</button>
+            </div>
+        </div>
         <div class="moti_sot" >
 
                 <!-- MOTI per sot -->
@@ -260,6 +366,22 @@ p.\37 -day {
   
        
     </div>
+
+
+
+     <!-- FOOTERIII -->
+
+     <footer>
+        <div class="container">
+          <p>&copy; 2023 Your Website. All rights reserved.</p>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </footer>
 </body>
 <script src="../js/Weather.js"></script>
 </html>
